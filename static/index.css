@@ -1,0 +1,47 @@
+html {
+    font-size: clamp(1rem, 2vw, 1.2rem);
+}
+
+body {
+    padding: 20px;
+}
+
+#logo-text {
+    font-size: 25px;
+    margin-left: 20px;
+}
+
+.page-top-margin {
+    margin-top: 80px;
+}
+
+.navbar-tab-text {
+    font-size: 20px;
+    font-weight: 400;
+    margin-left: 10px;
+    margin-right: 10px;
+    width: auto;
+    text-align: center;
+}
+
+
+/* change navbar active text color*/
+.navbar .nav-link.active {       
+    background-color: #c6cbd1; 
+    border-radius: 5px; 
+}
+
+.carousel-img {
+    
+}
+
+.bg-style {
+    background-color: rgb(201, 192, 192);
+    background-image: url(/static/assets/bg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    
+}
+

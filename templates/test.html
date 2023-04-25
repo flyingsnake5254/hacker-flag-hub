@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <title>Vertical Navbar with Accordion</title>
+</head>
+<body>
+  <div class="container-fluid">
+    <div class="row">
+      <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+        <div class="position-sticky">
+          <ul class="nav flex-column">
+            <li class="nav-item">
+              <a class="nav-link active" href="#">
+                Dashboard
+              </a>
+            </li>
+            <!-- Accordion -->
+            <div class="accordion" id="navAccordion">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingOne">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                    Item 1
+                  </button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#navAccordion">
+                  <div class="accordion-body">
+                    <ul class="nav flex-column">
+                      <li class="nav-item">
+                        <a class="nav-link" id="subitem-1" href="#">Subitem 1.1</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" id="subitem-2" href="#">Subitem 1.2</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- End Accordion -->
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                Item 2
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+        <!-- Your page content here -->
+        <div id="content">
+          <p>Click on a subitem to display its content.</p>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('subitem-1').addEventListener('click', function(event) {
+      event.preventDefault();
+      document.getElementById('content').innerHTML = '<h2>Subitem 1.1 Content</h2><p>This is the content for Subitem 1.1.</p>';
+    });
+
+    document.getElementById('subitem-2').addEventListener('click', function(event) {
+      event.preventDefault();
+      document.getElementById('content').innerHTML = '<h2>Subitem 1.2 Content</h2><p>This is the content for Subitem 1.2.</p>';
+    });
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+</body>
+</html>
